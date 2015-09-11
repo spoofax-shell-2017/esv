@@ -3,8 +3,8 @@ module analyze
 imports
   libstratego-sglr
   libstratego-sdf
-  lib/editor-common.generated
-  include/EditorService
+  editor-common.generated
+  EditorService
 
 strategies //ESV
 

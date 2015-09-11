@@ -1,10 +1,10 @@
-module editor/EditorService-Outliner
+module EditorService-Outliner
 
 imports
   
-  include/EditorService
-  lib/runtime/editor/outline-library
-  lib/runtime/editor/origins
+  EditorService
+  runtime/editor/outline-library
+  runtime/editor/origins
 
 rules
 
