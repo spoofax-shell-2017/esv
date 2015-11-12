@@ -47,7 +47,7 @@ strategies
       proposals := <
       	all-keys-KeyBindingDeclaration;
       	make-set;
-      	map(pp-editorservice-string)
+      	map(pp-editorservice-main-string)
       >
 
   editor-complete:
@@ -56,7 +56,7 @@ strategies
       proposals := <
       	all-keys-ColorDefDeclaration;
       	make-set;
-      	map(!(<pp-editorservice-string>, <ColorDefDeclaration; pp-editorservice-string>))
+      	map(!(<pp-editorservice-main-string>, <ColorDefDeclaration; pp-editorservice-main-string>))
       >
 
   editor-complete:
