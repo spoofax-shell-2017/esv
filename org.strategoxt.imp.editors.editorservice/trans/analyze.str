@@ -27,7 +27,7 @@ strategies //ESV
       <has-extension(|"esv")> filename;
       <open-import(
       	abspath, 
-      	parse-editorservice-file, 
+      	parse-editorservice-main-file, 
       	alltd(record-keybinding); alltd(record-color-def)
      )> filename
 
