@@ -1,7 +1,7 @@
 ---
 id: org.metaborg:org.metaborg.meta.lang.esv:${metaborgVersion}
 name: EditorService
-metaborgVersion: 2.0.0-beta1
+metaborgVersion: 2.0.0-SNAPSHOT
 metaborgBaselineVersion: 2.0.0-baseline-20160405-142357
 dependencies:
   compile:
@@ -9,6 +9,10 @@ dependencies:
   - org.metaborg:org.metaborg.meta.lang.template:${metaborgVersion}
   source:
   - org.metaborg:org.metaborg.meta.lib.analysis:${metaborgVersion}
+exports:
+- language: Stratego-Sugar
+  directory: src-gen
+  includes: "**/*.str"
 pardonedLanguages:
 - EditorService
 - Stratego-Sugar
