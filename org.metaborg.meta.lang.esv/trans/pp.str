@@ -11,7 +11,7 @@ rules
   
   pp-editorservice-string =
     parenthesize-EditorService;
-    prettyprint-Module 
+    prettyprint-EditorService-Module 
     ; !V([], <id>)
     ; box2text-string(|120)
   
