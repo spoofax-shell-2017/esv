@@ -2,9 +2,9 @@ module Colorer
 
 imports 
 
-  editor/Colorer.generated
+  libspoofax/color/default
 
-colorer Additional coloring
+colorer // Additional coloring
   
   SectionName: _ italic
    
