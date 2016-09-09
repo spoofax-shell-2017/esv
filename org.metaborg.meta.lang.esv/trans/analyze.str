@@ -2,8 +2,8 @@ module analyze
 
 imports
 
-  libstratego-sglr
-  stratego/metaborg
+  libspoofax/resource/cache
+  libspoofax/core/parse
   signatures/-
 
 strategies //ESV
@@ -27,7 +27,7 @@ strategies //ESV
       <has-extension(|"esv")> filename;
       <open-import(
       	abspath, 
-      	parse-editorservice-file, 
+      	parse-file-with-current-lang,
       	alltd(record-keybinding); alltd(record-color-def)
      )> filename
 

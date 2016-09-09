@@ -1,8 +1,9 @@
 module check
 
 imports
-  stratego/metaborg
-  signatures/EditorService-sig
+
+  libspoofax/term/origin
+  signatures/-
   analyze
   pp
 
@@ -24,7 +25,6 @@ strategies
       	not(<ColorDefDeclaration> x)
 
 
-	
   constraint-warning:
     CompletionTrigger(".", _) -> $[Trigger is a regular expression that matches any character. Use \. instead]
 
@@ -49,7 +49,6 @@ strategies
   	  filter(?Shortcut(_)); ?[_,_|_]
   
   constraint-info = fail
-  
   
 rules // deprecation
 
