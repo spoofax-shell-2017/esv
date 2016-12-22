@@ -3,7 +3,7 @@ module pp
 imports
 
   libstratego-gpp
-  runtime/refactoring/-
+  libspoofax/sdf/pp
   pp/EditorService-pp
   pp/EditorService-parenthesize
 
@@ -11,7 +11,7 @@ rules
   
   pp-editorservice-string =
     parenthesize-EditorService;
-    prettyprint-Module 
+    prettyprint-EditorService-Module 
     ; !V([], <id>)
     ; box2text-string(|120)
   

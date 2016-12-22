@@ -2,8 +2,10 @@ module pack
 
 imports
   
-  signatures/EditorService-sig
-  stratego/metaborg
+  libspoofax/core/parse
+  libspoofax/resource/cache
+  libspoofax/resource/path
+  signatures/-
 
 strategies
 
@@ -44,11 +46,11 @@ strategies
   read-descriptor-file:
     name -> esv
     with
-      esv := <find-descriptor-file; parse-file>
+      esv := <find-descriptor-file; parse-file-with-current-lang>
 
   find-descriptor-file:
     name -> file
     with
-      file := <resolve-in-path(|<editorservice-source-and-include-locations>)> $[[name].esv]
+      file := <resolve-in-path(|<current-language-source-and-include-directories>)> $[[name].esv]
     <+
       <debug(!"Error: Cannot find ESV module "); fail> name

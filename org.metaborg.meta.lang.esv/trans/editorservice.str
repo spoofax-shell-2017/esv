@@ -1,20 +1,12 @@
 module editorservice
 
-// TODO: warn about multi-char highlighted brackets
-// TODO: check if provider/imported/etc. files exist
-// TODO: check if there is _any_ provider for observer etc.
-
 imports
-  libstratego-lib  
-  libstratego-sglr
-  libstratego-sdf
-  stratego/metaborg
-  signatures/EditorService-sig
+
+  libspoofax/term/origin
   check
   analyze
   pack
   outline
-  runtime/editor/-
 
 rules
   
@@ -29,12 +21,7 @@ rules
     where
       <?KeyCombination(_)> selected;
       target := <KeyBindingDeclaration; ?KeyBinding(_, <id>)> selected
-      
-  editor-outline:
-    (node, position, ast, path, project-path) -> outline
-    where
-      outline := <simple-label-outline(to-outline-label; try(un-double-quote))> ast
-      
+
   editor-analyze:
     (ast, path, project-path) -> (ast, error*, warning*, info*)
     with
