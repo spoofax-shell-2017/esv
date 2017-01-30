@@ -17,8 +17,3 @@ language
   provider : target/metaborg/stratego.jar
   observer : editor-analyze
   on save  : pack-main-descriptor-file
-
-references
-
-   reference KeyCombination : editor-resolve
-   hover     KeyCombination : editor-hover
