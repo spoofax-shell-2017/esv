@@ -2,35 +2,16 @@ module editorservice
 
 imports
 
+  libstratego-lib
   libspoofax/term/origin
-  check
-  analyze
   pack
   outline
 
 rules
   
-  editor-resolve:
-    (selected, position, ast, path, project-path) -> target
-    where
-      <?KeyCombination(_)> selected;
-      target := <KeyBindingDeclaration; ?KeyBinding(<id>, _)> selected
-
-  editor-hover:
-    (selected, position, ast, path, project-path) -> <try(origin-text)> target
-    where
-      <?KeyCombination(_)> selected;
-      target := <KeyBindingDeclaration; ?KeyBinding(_, <id>)> selected
-
   editor-analyze:
-    (ast, path, project-path) -> (ast, error*, warning*, info*)
-    with
-      <chdir> project-path;
-      record-all-esvs;
-      error*   := <collect-all(constraint-error, conc)> ast;
-      warning* := <collect-all(constraint-warning, conc)> ast;
-      info*    := <collect-all(constraint-info, conc)> ast
-
+    (ast, path, project-path) -> (ast, [], [], [])
+  
   generate-aterm:
     (selected, position, ast, path, project-path) -> (filename, selected)
     where

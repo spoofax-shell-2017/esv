@@ -1,11 +1,20 @@
 module Colorer
 
-imports 
+// Baseline ESV errors on color references for some reason, disable import and use explicit colors. 
+//imports libspoofax/color/default
 
-  libspoofax/color/default
+colorer // Default, token-based highlighting
+
+  keyword    : 127 0 85 bold
+  identifier : _
+  string     : 0 0 255
+  number     : 0 128 0
+  var        : 139 69 19 italic
+  operator   : 0 0 128
+  layout     : 63 127 95 italic
 
 colorer // Additional coloring
   
   SectionName: _ italic
    
-  ColorName: black
+  ColorName: 0 0 0
